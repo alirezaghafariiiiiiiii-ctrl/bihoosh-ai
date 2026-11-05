@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بی‌هوش | دستیار توسعه بازی</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- فونت فارسی وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="chat-container">
+        <header>
+            <h1>بی‌هوش 🎮</h1>
+            <p>دستیار هوشمند توسعه بازی</p>
+            <select id="provider">
+                <option value="openrouter">OpenRouter (GPT-4o-mini)</option>
+                <option value="groq">Groq (Llama3)</option>
+            </select>
+        </header>
+        
+        <div id="chat-box" class="chat-box">
+            <div class="message bot">سلام! من بی‌هوش هستم. چه خبر از پروژه بازی‌ات؟ چه سوالی داری؟</div>
+        </div>
+        
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="سوال خود را بنویسید یا میکروفون را بزنید...">
+            <button class="send-btn" onclick="sendMessage()">ارسال</button>
+            <button id="mic-btn" class="mic-btn" onclick="startVoiceRecognition()">🎤</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
