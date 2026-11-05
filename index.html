@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10121b">
+  <title>بیهوش AI | دستیار هوشمند</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">B</div>
+        <div>
+          <h1>بیهوش AI</h1>
+          <span>دستیار هوشمند</span>
+        </div>
+      </div>
+
+      <button id="newChatBtn" class="new-chat">+ گفت‌وگوی جدید</button>
+
+      <div class="sidebar-info">
+        <span class="status-dot"></span>
+        آماده پاسخ‌گویی
+      </div>
+
+      <div class="sidebar-footer">
+        <span>نسخه 1.0</span>
+        <span>OpenAI + OpenRouter</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button id="menuBtn" class="menu-btn" aria-label="باز کردن منو">☰</button>
+        <div>
+          <strong>بیهوش AI</strong>
+          <small>گفت‌وگو با هوش مصنوعی</small>
+        </div>
+        <div class="connection">
+          <span class="status-dot"></span>
+          آنلاین
+        </div>
+      </header>
+
+      <section id="chatArea" class="chat-area">
+        <div id="welcome" class="welcome">
+          <div class="welcome-icon">✦</div>
+          <h2>سلام! من بیهوش AI هستم</h2>
+          <p>سؤالت را بپرس تا با کمک هوش مصنوعی به تو پاسخ بدهم.</p>
+
+          <div class="suggestions">
+            <button class="suggestion" data-prompt="هوش مصنوعی چیست؟">
+              هوش مصنوعی چیست؟
+            </button>
+            <button class="suggestion" data-prompt="یک برنامه‌نویسی ساده با جاوااسکریپت آموزش بده">
+              آموزش برنامه‌نویسی
+            </button>
+            <button class="suggestion" data-prompt="برای ساخت یک وب‌سایت از کجا شروع کنم؟">
+              ساخت وب‌سایت
+            </button>
+          </div>
+        </div>
+
+        <div id="messages" class="messages"></div>
+      </section>
+
+      <section class="composer-area">
+        <div class="settings">
+          <label>
+            سرویس:
+            <select id="provider">
+              <option value="openai">OpenAI</option>
+              <option value="openrouter">OpenRouter</option>
+            </select>
+          </label>
+
+          <label class="model-label">
+            مدل:
+            <input
+              id="model"
+              type="text"
+              value="gpt-4o-mini"
+              placeholder="نام مدل را وارد کن"
+            >
+          </label>
+
+          <button id="loadModelsBtn" class="load-models">
+            دریافت مدل‌ها
+          </button>
+        </div>
+
+        <div class="key-row">
+          <input
+            id="apiKey"
+            type="password"
+            placeholder="کلید API خودت را وارد کن"
+            autocomplete="off"
+          >
+          <button id="toggleKeyBtn" type="button" class="toggle-key">نمایش</button>
+        </div>
+
+        <form id="chatForm" class="input-box">
+          <textarea
+            id="messageInput"
+            rows="1"
+            placeholder="پیامت را اینجا بنویس..."
+          ></textarea>
+          <button id="sendBtn" type="submit" aria-label="ارسال پیام">
+            ➤
+          </button>
+        </form>
+
+        <p class="disclaimer">
+          برای استفاده، کلید API معتبر لازم است. هزینه استفاده از سرویس بر عهده صاحب کلید است.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
